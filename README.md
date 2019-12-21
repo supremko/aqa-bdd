@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/udy9ow5g818tx5u5?svg=true)](https://ci.appveyor.com/project/supremko/aqa-bdd)
