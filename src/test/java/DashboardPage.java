@@ -16,33 +16,30 @@ public class DashboardPage {
     private SelenideElement amount = $("[data-test-id=amount]").$("[class=input__control");
     private SelenideElement from = $("[data-test-id=from]").$("[class=input__control");
     private SelenideElement topUpBtn = $("[data-test-id=action-transfer").$("[class=button__content]");
-    String sum = "1000";
-    String card1 = "5559 0000 0000 0001";
-    String card2 = "5559 0000 0000 0002";
 
     public DashboardPage() {
         heading.shouldBe(visible);
     }
 
 
-    public void topUpCard1() {
+    public void topUpCard1(Data.ListCards listCards) {
         card1btn.click();
         topUpCards.waitUntil(visible,5000);
         amount.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        amount.setValue(sum);
+        amount.setValue(Data.getSum().toString());
         from.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        from.setValue(card2);
+        from.setValue(listCards.getCard2());
         topUpBtn.click();
         cards.waitUntil(visible,5000);
     }
 
-    public void topUpCard2() {
+    public void topUpCard2(Data.ListCards listCards) {
         card2btn.click();
         topUpCards.waitUntil(visible,5000);
         amount.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        amount.setValue(sum);
+        amount.setValue(Data.getSum().toString());
         from.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        from.setValue(card1);
+        from.setValue(listCards.getCard1());
         topUpBtn.click();
         cards.waitUntil(visible,5000);
     }

@@ -14,7 +14,9 @@ public class MoneyTransferTest {
         val verificationCode = Data.getVerificationCodeFor();
         verificationPage.verify(verificationCode);
         val dashboardPage = new DashboardPage();
-        dashboardPage.topUpCard1();
-        dashboardPage.topUpCard2();
+        val listCards = Data.ListCards();
+        dashboardPage.topUpCard1(listCards);
+        dashboardPage.topUpCard2(listCards);
+
     }
 }

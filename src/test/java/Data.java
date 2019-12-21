@@ -20,4 +20,17 @@ public class Data{
     public static VerificationCode getVerificationCodeFor() {
         return new VerificationCode("12345");
     }
+
+    @Value
+    public static class ListCards {
+        private String card1;
+        private String card2;
+    }
+    public static ListCards ListCards() {return new ListCards("5559 0000 0000 0001", "5559 0000 0000 0002");}
+
+    @Value
+    public static class Sum {
+        private String sum;
+    }
+    public static Sum getSum() {return new Sum("1000");}
 }
