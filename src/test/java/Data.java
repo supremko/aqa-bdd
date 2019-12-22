@@ -24,13 +24,11 @@ public class Data{
     @Value
     public static class ListCards {
         private String card1;
+        private String lastNumCard1;
         private String card2;
+        private String lastNumCard2;
     }
-    public static ListCards ListCards() {return new ListCards("5559 0000 0000 0001", "5559 0000 0000 0002");}
-
-    @Value
-    public static class Sum {
-        private String sum;
-    }
-    public static Sum getSum() {return new Sum("1000");}
+    public static ListCards getListCards() {
+        return new ListCards("5559 0000 0000 0001", "0001",
+                "5559 0000 0000 0002", "0002");}
 }
